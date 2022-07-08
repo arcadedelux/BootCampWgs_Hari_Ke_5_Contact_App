@@ -1,5 +1,15 @@
 const {questions,saveData} = require('./contact')
 
+const run = async () => {
+    const name =  await questions('Whats is your name?')
+    const phone =  await questions('Whats is your mobile phone number?')
+    const email=  await questions('Whats is your email address?')
+
+    saveData(name,phone,email)
+}
+
+run()
+
 // rl.question('Whats is your name?',(name)=>{
 //     rl.question('Your Mobile Phone Number',(phone)=>{
 //         const contact ={name,phone}
@@ -11,14 +21,3 @@ const {questions,saveData} = require('./contact')
 //         rl.close()
 //     })
 // })
-
-
-const run = async () => {
-    const name =  await questions('Whats is your name?')
-    const phone =  await questions('Whats is your mobile phone number?')
-    const email=  await questions('Whats is your email address?')
-
-    saveData(name,phone,email)
-}
-
-run()
